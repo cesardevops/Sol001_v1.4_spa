@@ -1,0 +1,16 @@
+{
+    "nav": {
+        "id": "menu-bar",
+        "obj": {
+            "menuitem": [
+                {
+                    "value": "Inicio", "onclick": "alert('hello 1')"
+                },{
+                    "value": "Servicios", "onclick": "alert('hello 2')"
+                },{
+                    "value": "Contacto", "onclick": "alert('hello 3')"
+                }
+            ]
+        }
+    }
+}

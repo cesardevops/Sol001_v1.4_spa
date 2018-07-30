@@ -1,0 +1,144 @@
+<html>
+	<template id="menu-bar">
+<style>
+:host {
+	--color : #929daf;
+	--color-hover: #bec5cf;
+	--before-color: #00bcd4;
+	--after-color: #428BFF;
+	--background-nav: #1d1e22;
+}
+nav{
+	user-select: none;
+}
+ul{
+	margin: 0px; padding: 0px; display: flex;
+}
+ul li {
+	list-style: none;
+	padding: 10px 20px;
+	transition: .5s;
+}
+ul li a {
+	font-family:'Montserrat', sans-serif;
+	text-decoration: none;
+	color: var(--color);
+	position: relative;
+	display: flex;
+	line-height: 30px;
+	font-size: 18px;
+	font-weight: bold;
+}
+ul li:hover a
+{
+	color: var(--color-hover);
+}
+ul li:hover a div{
+	filter: grayscale(0);
+}
+ul li a:before{
+	content: '';
+	width: 0px;
+	height: 3px;
+	background: var(--before-color);
+	position: absolute;
+	top: 120%;
+	left: 0;
+	transition: 275ms;
+	mix-blend-mode: multiply;
+}
+ul li a:after{
+	content: '';
+	width: 0px;
+	height: 3px;
+	background: var(--after-color);
+	position: absolute;
+	top: 120%;
+	right: 0;
+	transition: .5s;
+	mix-blend-mode: multiply;
+}
+
+ul li:hover a:before{
+	width: 50%;
+	transform: translateX(100%);
+}
+ul li:hover a:after{
+	width: 50%;
+	transform: translateX(-100%);
+}
+
+
+/*----------  ICONS  ----------*/
+
+ul li a div {
+	width: 30px;
+	height: 30px;
+	margin-right: 7px;
+}	
+#icon-home{
+	background-image: url('icons/Gnome-Go-Home-64.png');
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-position: center;
+}	
+#icon-service{
+	background-image: url('icons/Gnome-Preferences-Other-64.png');
+	background-size: 25px 25px;
+	background-repeat: no-repeat;
+	background-position: center;
+}	
+#icon-contact{
+	background-image: url('icons/Gnome-Mail-Mark-Unread-64.png');
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+}	
+</style>
+
+		<nav>
+			<ul>
+				<li>
+					<a href="#/" class="item">
+						<div id="icon-home"></div>
+						<span>Inicio</span>
+					</a>
+				</li>
+				<li>
+					<a href="#/services" class="item">
+						<div id="icon-service"></div>
+						<span>Servicios</span>
+					</a>
+				</li>
+				<li>
+					<a href="#/contact" class="item">
+						<div id="icon-contact"></div>
+						<span>Contacto</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+</script>
+	</template>
+
+	<script>
+		class cls_navMenu extends HTMLElement {
+			constructor(){
+				super();
+				this.importDocument = document.currentScript.ownerDocument;
+
+
+			}
+
+			connectedCallback () {
+				let shadowRoot = this.attachShadow({ mode : 'open'});
+				const t = this.importDocument.querySelector('#menu-bar');
+				const instance = t.content.cloneNode(true);
+				shadowRoot.appendChild(instance);
+			}
+		}
+
+		window.customElements.define('navigator-menu-bar',cls_navMenu);
+	</script>
+</html>
