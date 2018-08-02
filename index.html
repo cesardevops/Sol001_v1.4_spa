@@ -2,19 +2,27 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
+	<meta name="theme-color" content="#DB5945">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>ApplicationWeb</title>
 
-	<link rel="stylesheet" href="styles/menu.css">
 	<link rel="import" href="web-components/navigator-menu-bar.html">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="import" href="web-components/navigator-footer-bar.html">
+	<!--<link href="https://fonts.googleapis.com/css?family=Roboto" rel='stylesheet' type='text/css'>-->
+	<link rel="stylesheet" href="styles/layout.css">
+	<link rel="stylesheet" href="styles/services.css">
+	<link rel="stylesheet" href="styles/contact.css">
+
 </head>
 <body>
 	<navigator-menu-bar></navigator-menu-bar>
-
-	<div id="app-content">
-		
+	
+	<div id="app">
+		<div id="app-content"></div>
+		<navigator-footer-bar></navigator-footer-bar>
 	</div>
+
 </body>
 	
 	<script src="javascripts/application.js" type="text/javascript"></script>

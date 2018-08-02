@@ -41,18 +41,17 @@ function printServices (data) {
     	var id = "";
 	    for(var i = 0 ; i < data.Servicios.length ; i ++)
 	        {
-	            var newListItem = document.createElement("li");
+	         /*   var newListItem = document.createElement("li");
 				newListItem.setAttribute("onclick", "get_service('"+ data.Servicios[i]._id+"')");
 				newListItem.appendChild(document.createTextNode(data.Servicios[i].Nombre));
 				if(i===0){
 					newListItem.classList.add('active');
 					id = data.Servicios[i]._id;
 	            }
-	            newList.appendChild(newListItem);
+	            newList.appendChild(newListItem);*/
 	        }
 
-	    listContainer.appendChild(newList);	
-	    get_service(id);
+	   // listContainer.appendChild(newList);	
     }
 
 }

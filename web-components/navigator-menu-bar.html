@@ -3,69 +3,50 @@
 <style>
 :host {
 	--color : #929daf;
-	--color-hover: #bec5cf;
-	--before-color: #00bcd4;
-	--after-color: #428BFF;
-	--background-nav: #1d1e22;
+	--color-hover: #2a2e3e;
 }
 nav{
 	user-select: none;
+	background-color: white;
+	border-bottom: 1px solid rgba(0,0,0,.0975);
+	height: 49px;
 }
-ul{
-	margin: 0px; padding: 0px; display: flex;
+ul {
+	font-size: 0;
+	position: relative;
+	padding: 0;
+	user-select: none;
 }
+
+li {
+	display: inline-block;
+	text-align: center;
+	color: ghostwhite;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
 ul li {
 	list-style: none;
-	padding: 10px 20px;
 	transition: .5s;
 }
 ul li a {
-	font-family:'Montserrat', sans-serif;
+	padding: 8px 20px;
+	width: 100px;
 	text-decoration: none;
 	color: var(--color);
 	position: relative;
 	display: flex;
-	line-height: 30px;
-	font-size: 18px;
+	line-height: 33px;
+	font-size: 14px;
 	font-weight: bold;
+	transition: all .3s;
 }
 ul li:hover a
 {
 	color: var(--color-hover);
-}
-ul li:hover a div{
-	filter: grayscale(0);
-}
-ul li a:before{
-	content: '';
-	width: 0px;
-	height: 3px;
-	background: var(--before-color);
-	position: absolute;
-	top: 120%;
-	left: 0;
-	transition: 275ms;
-	mix-blend-mode: multiply;
-}
-ul li a:after{
-	content: '';
-	width: 0px;
-	height: 3px;
-	background: var(--after-color);
-	position: absolute;
-	top: 120%;
-	right: 0;
-	transition: .5s;
-	mix-blend-mode: multiply;
-}
-
-ul li:hover a:before{
-	width: 50%;
-	transform: translateX(100%);
-}
-ul li:hover a:after{
-	width: 50%;
-	transform: translateX(-100%);
+	background: #efefef;
 }
 
 
@@ -74,26 +55,88 @@ ul li:hover a:after{
 ul li a div {
 	width: 30px;
 	height: 30px;
-	margin-right: 7px;
+	margin-right:3px;
 }	
 #icon-home{
 	background-image: url('icons/Gnome-Go-Home-64.png');
-	background-size: 20px 20px;
+	background-size: 15px 15px;
 	background-repeat: no-repeat;
 	background-position: center;
 }	
 #icon-service{
 	background-image: url('icons/Gnome-Preferences-Other-64.png');
-	background-size: 25px 25px;
+	background-size: 18px 18px;
 	background-repeat: no-repeat;
 	background-position: center;
 }	
 #icon-contact{
 	background-image: url('icons/Gnome-Mail-Mark-Unread-64.png');
-	background-size: 30px 30px;
+	background-size: 20px 20px;
 	background-repeat: no-repeat;
 	background-position: center;
 }	
+#icon-about{
+	background-image: url('icons/Gnome-System-Users-64.png');
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+@media screen and (max-width: 480px){
+	ul{
+		display: flex;
+		justify-content: space-around;
+	}
+	ul li{
+		width: calc(100% / 4);
+	}
+	ul li a{
+		width: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		line-height: 13px;
+	}
+	ul li a span{
+		font-size: 10px;
+	}
+	ul li a div {
+		width: 20px;
+		height: 20px;
+		animation: top-to-down ease;
+	}
+}
+
+@media screen and (max-width: 767px){
+	ul li a{
+		width: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		line-height: 13px;
+	}
+	ul li a span{
+		font-size: 10px;
+	}
+	ul li a div {
+		width: 20px;
+		height: 20px;
+		animation: top-to-down ease;
+	}
+}
+
+
+@-webkit-keyframes cd-scroll-down {
+  0% {
+    -webkit-transform: translateX(-50%) scale(1);
+  }
+  50% {
+    -webkit-transform: translateY(10px) translateX(-50%) scale(1);
+  }
+  100% {
+    -webkit-transform: translateX(-50%) scale(1);
+  }
+}
+
 </style>
 
 		<nav>
@@ -111,6 +154,12 @@ ul li a div {
 					</a>
 				</li>
 				<li>
+					<a href="#/about" class="item">
+						<div id="icon-about"></div>
+						<span>Nosotros</span>
+					</a>
+				</li>
+				<li>
 					<a href="#/contact" class="item">
 						<div id="icon-contact"></div>
 						<span>Contacto</span>
@@ -119,7 +168,6 @@ ul li a div {
 			</ul>
 		</nav>
 
-</script>
 	</template>
 
 	<script>

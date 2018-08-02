@@ -1,0 +1,102 @@
+<html>
+	<template id="footer-bar">
+	<style>
+	#footer{
+		user-select: none;
+		font-size: 12px;
+		font-weight: 600;
+		margin: 0 auto;
+		text-transform: uppercase;
+		max-width: 40rem;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		font-size: 12px;
+		font-weight: 600;
+		padding: 38px 0;
+	}
+	#footer span{
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	nav{
+		display: flex;
+		align-items: stretch;
+		border: 0 solid #000;
+		box-sizing: border-box;
+		flex-direction: column;
+		flex-shrink: 0;
+		margin: 0;
+		padding: 0;
+		position: relative;
+	}
+	ul{
+		padding: 0px;
+		margin-top: 0px;
+		margin-left: 0px;
+		margin-right: 16px;
+		margin-bottom: 3px;
+		flex-grow: 1;
+		list-style-type: none;
+	}
+	ul li{
+		vertical-align: baseline;
+		display: inline-block;
+		margin-bottom: 7px;
+		margin-right: 16px;
+	}
+	ul li, ul li a{
+		color: #003569;
+		text-decoration: none;
+	}
+
+@media (max-width: 875px){
+	#footer nav , 
+	#footer span {
+		padding: 10px 0;
+		margin: 0 auto;
+		text-align: center;
+	}
+	ul{
+		justify-content: center;
+		margin: 0 auto;
+		max-width: 360px;
+	}
+}
+	</style>
+
+	<div id="footer">
+		<nav>
+			<ul>
+				<li><a href="https://pagina.com"><span>Linkedln</span></a></li>
+				<li><a href="mailto"><span>Email</span></a></li>
+				<li><a href="https://m.facebook.com"><span>Facebook</span></a></li>
+				<li><a href="https://m.youtube.com"><span>YouTube</span></a></li>
+			</ul>
+		</nav>
+		<span>ALL CONTENT © 2018</span>
+	</div>
+
+	</template>
+
+	<script>
+		class cls_navfooter extends HTMLElement {
+			constructor(){
+				super();
+				this.importDocument = document.currentScript.ownerDocument;
+			}
+			connectedCallback () {
+				let shadowRoot = this.attachShadow({ mode : 'open'});
+				const t = this.importDocument.querySelector('#footer-bar');
+				const instance = t.content.cloneNode(true);
+				shadowRoot.appendChild(instance);
+			}
+		}
+
+		window.customElements.define('navigator-footer-bar',cls_navfooter);
+	</script>
+</html>

@@ -5,8 +5,10 @@
 		.ruta('/services', 'views/services/services.html','service',function(){
 			simpleroute.getctrl().getData();
 		})
+		.ruta('/about', 'views/about/about.html',null,null)
 		.ruta('/contact', 'views/contact/contact.html','contact',function(){
-			simpleroute.getId('frm-contact').noSubmit();
+			simpleroute.getId('frm_contact').noSubmit();
+			simpleroute.getctrl().addEvents(simpleroute.get('frm_contact'))
 		});
 
 })(window, document);

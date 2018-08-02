@@ -46,12 +46,7 @@
 					var hash = window.location.hash.substring(1) || '/',
 						destino = rutas[hash];
 						var ajax = new XMLHttpRequest();
-
 					if(destino && destino.plantilla){
-						/*ajax.addEventListener('load',function(){
-							//console.log(this.responseText);
-							marco.innerHTML = this.responseText;
-						}, false);*/
 
 						if (destino.controlador) {
 							controladorActual = controladores[destino.controlador].controller;
@@ -74,6 +69,7 @@
 						window.location.hash='#/';
 					}
 				}
+
 			};
 
 		return simpleroute;

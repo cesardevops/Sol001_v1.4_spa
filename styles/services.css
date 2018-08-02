@@ -1,0 +1,80 @@
+.service-card-container {
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 4px 2px -2px;
+  font-family: "adelle-sans", sans-serif;
+  font-weight: 100;
+  margin: 30px auto;
+  width: 20rem;
+  user-select: none;
+}
+@media screen and (min-width: 480px) {
+  .service-card-container {
+    width: 28rem;
+  }
+}
+@media screen and (min-width: 767px) {
+  .service-card-container {
+    width: 40rem;
+  }
+}
+@media screen and (min-width: 959px) {
+  .service-card-container {
+    width: 50rem;
+  }
+}
+
+.service-card-container a {
+  color: #4d4dff;
+  text-decoration: none;
+  transition: .25s ease;
+}
+.service-card-container a:hover {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+.service-card-cover {
+  background: url("");
+  background-size: cover;
+  border-radius: 5px 5px 0 0;
+  height: 15rem;
+  box-shadow: inset rgba(0, 0, 0, 0.2) 0 64px 64px 16px;
+}
+
+
+.card-body {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.card-title h1 a {
+  display: block;
+  padding-top: 10px;
+  color: #333;
+  font-weight: 100;
+  font-size: .8em;
+}
+
+.card-summary p {
+  display: block;
+  color: #4d4d4d;
+}
+div.btns{
+  padding-bottom: 1.25rem;
+}
+a.btn-view-more{
+  border: 1px solid #999999;
+  border-radius: 3px;
+  color: #999999;
+  font-size: .75rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  padding:.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 5rem;
+}

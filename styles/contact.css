@@ -1,0 +1,146 @@
+.contact-card-container {
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 4px 2px -2px;
+  font-family: "adelle-sans", sans-serif;
+  font-weight: 100;
+  margin: 30px auto;
+  width: 20rem;
+  user-select: none;
+}
+@media screen and (min-width: 480px) {
+  .contact-card-container {
+    width: 28rem;
+  }
+}
+@media screen and (min-width: 767px) {
+  .contact-card-container {
+    width: 40rem;
+  }
+}
+@media screen and (min-width: 959px) {
+  .contact-card-container {
+    width: 50rem;
+  }
+}
+
+.contact-card-cover{
+	background-color: #92dce0;
+	background-image: url('../img/bg_lines.png');
+	border-radius: 5px 5px 0 0;
+	height: 15rem;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transition: all 270ms ease;
+}
+.contact-card-cover h1{
+	text-transform: uppercase;
+	color: #00737c;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.contact-card-cover p,
+.contact-card-cover span{
+	color: #404040;
+	font-size: 1rem;line-height: 1.5;
+}
+.contact-card-cover h1,
+.contact-card-cover p,
+.contact-card-cover span{
+	width: 80%;
+    transition: all 270ms ease;
+}
+
+@media screen and (max-width: 767px) {
+	.contact-card-container {
+		width: 90%;
+	}
+	.contact-card-cover{
+		height: 10rem;
+	}
+	.contact-card-cover h1{
+		margin-bottom: .5rem;
+		letter-spacing: -1px;
+		font-size: 1.3rem;
+	}
+	.contact-card-cover p,
+	.contact-card-cover span{
+		font-size: 12px;line-height: 1.2;
+	}
+	.contact-card-cover h1,
+	.contact-card-cover p,
+	.contact-card-cover span{
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.contact-card-container {
+		box-shadow:none;
+		width: 100%;
+		margin: 0px;
+ 		border: 0px;
+	}
+	.contact-card-cover{
+		border-radius: 0px;
+		height: 10rem;
+	}
+	.contact-card-cover h1{
+		margin-bottom: .4rem;
+		letter-spacing: -1px;
+		font-size: 1.2rem;
+	}
+	.contact-card-cover p,
+	.contact-card-cover span{
+		font-size: 11px;line-height: 1.1;
+	}
+	.contact-card-cover h1,
+	.contact-card-cover p,
+	.contact-card-cover span{
+		text-align: center;
+	}
+}
+
+
+
+
+.input-group{
+	position: relative;
+	margin-bottom: 20px;
+}
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group textarea
+{
+	box-sizing: border-box;
+	font-size: 16px;
+	width: 100%;
+	outline: none;
+	padding: 12px;
+	border: none;
+	background: #efefef;
+	border: 1px solid  rgba(0,0,0,.0975);
+}
+.input-group input[type="text"]:focus,
+.input-group input[type="email"]:focus,
+.input-group textarea:focus,
+.input-group input[type="text"]:active,
+.input-group input[type="email"]:active,
+.input-group textarea:active{
+	outline: none;
+	border: 1px solid #656565;
+}
+
+.input-group input[type="text"].error,
+.input-group input[type="email"].error,
+.input-group textarea.error{
+	background-color: #FFC2C2;
+	border: 1px solid #ff4d4d;
+}
