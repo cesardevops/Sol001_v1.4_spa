@@ -20,6 +20,26 @@
 	
 	<div id="app">
 		<div id="app-content"></div>
+
+		<div class="news-Letter">
+			<div class="container">
+				<h2>Suscríbase a nuestro boletín</h2>
+				<p>Obtenga nuestro resumen mensual con las últimas noticias</p>
+				<form>
+					<input type="email" placeholder="Tu correo electrónico" name="email" class="js-email">
+					<button class="newsletter__btn js-btn">
+						<i>Regístrate</i>
+						<em class="icon-check" aria-hidden="true"></em>
+						<span class="btn-loader" aria-hidden="true">
+						<em></em>
+						<em></em>
+						<em></em>
+						</span>
+					</button>
+				</form>
+				<p id="newsletter__response" style="display: none;" >Lo sentimos, ha habido un error. Inténtalo de nuevo.</p>
+			</div>
+		</div>
 		<navigator-footer-bar></navigator-footer-bar>
 	</div>
 

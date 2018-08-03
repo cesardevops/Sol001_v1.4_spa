@@ -7,6 +7,16 @@ var data = null;
 
 		getData : function(){
 			getData_services();
+		},
+		addEvents : function(){
+			var ServicesContainer = document.getElementsByClassName("card_button");
+			var getatt = function() {
+			    var attribute = this.getAttribute("data-id");
+			    alert(attribute);
+			};
+			for (var i = 0; i < ServicesContainer.length; i++) {
+			    ServicesContainer[i].addEventListener('click', getatt, false);
+			}
 		}
 
 	});

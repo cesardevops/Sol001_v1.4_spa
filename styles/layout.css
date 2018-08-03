@@ -24,6 +24,10 @@ time, mark, audio, video {
 	vertical-align: baseline;
 	font-family: 'Roboto' , sans-serif;
 }
+*, *::after, *::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -122,4 +126,91 @@ button.btn{
   white-space: nowrap;
   width: 5rem;
   background: #8b837d;
+}
+
+
+.news-Letter{
+	text-align: center;
+	padding-top: 3.2em;
+	padding-bottom: 3.2em;
+}
+
+.news-Letter,
+.news-Letter .container{
+	position: relative;
+}
+.news-Letter .container{
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto
+}
+.news-Letter .container p{
+	margin: 1em auto;
+	line-height: 1.2;
+}
+
+.news-Letter .container form{
+	position: relative;
+	display: inline-block;
+	width: 90%;
+	max-width: 420px;
+}
+
+.news-Letter .container #newsletter__response
+{
+	font-size: .8rem!important;
+	min-height: 16px;
+	margin-bottom: 0!important;
+	bottom: -30px;
+	width: 100%;
+	left: 0;
+	color: #fc4348!important;
+}
+.news-Letter .container form input[type="email"]{
+	width: 100%;
+	padding: 0 110px 0 1.2em;
+	height: 60px;
+	border-radius: 50em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    box-shadow: none;
+    border: 2px solid #d8dadb;
+    background: #fff;
+}
+@media only screen and (min-width: 1024px)
+{
+	.news-Letter .container form input[type="email"]{
+	    height: 68px;
+	    font-size: 1.2rem;
+	}
+}
+.news-Letter .container form button
+{
+	border: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: inherit;
+	position: absolute;
+	width: 100px;
+	height: 50px;
+	border-radius: 50em;
+	background: #d8dadb;
+	right: 5px;
+	top: calc(50% - 25px);
+	overflow: hidden;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+
+}
+
+@media only screen and (min-width: 1024px)
+{
+	.news-Letter .container form button {
+		height: 56px;
+		top: calc(50% - 28px);
+		right: 6px;
+	}
 }
